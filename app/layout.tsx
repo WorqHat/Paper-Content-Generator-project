@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Research Paper Information Generator',
-  description: 'Information generator for Research paper by Worqhatpublic/logo.png',
+  description: 'Information generator for Research paper by Worqhat',
 }
 
 export default function RootLayout({
