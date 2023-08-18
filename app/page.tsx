@@ -13,7 +13,7 @@ export default function Home() {
     { name: 'Instagram', icon: '/instagram-icon.svg', url: 'https://instagram.com/worqhat' },
     { name: 'Discord', icon: '/discord-icon.svg', url: 'https://discord.gg/KHh9mguKBx' },
     { name: 'LinkedIn', icon: '/linkedin-icon.svg', url: 'https://linkedin.com/company/worqhat' },
-    { name: 'Twitter', icon: '/twitter-icon.svg', url: 'https://twitter.com/worqhat' },
+    { name: 'Twitter', icon: '/twitter-x-seeklogo.com-4.svg', url: 'https://twitter.com/worqhat' },
     { name: 'GitHub', icon: '/github-icon.svg', url: 'https://github.com/worqhat' },
   ];
 
@@ -68,7 +68,7 @@ export default function Home() {
     </div>
     <div className="container rounded-lg text-white m-20 p-14 w-full" style={{ backgroundColor: "#ffffff" }}>
         <h1 className="text-center text-4xl font-bold mb-6" style={{  color: "black" }}><strong>
-          Information generator for Research paper by Worqhat</strong>
+          Information Generator for Research Paper by WorqHat</strong>
         </h1>
         <div className="flex flex-col md:flex-row">
           <div className="flex-1 mb-4 md:mb-0 md:mr-4">
@@ -76,16 +76,17 @@ export default function Home() {
             <textarea
               value={abstract}
               onChange={(event) => setAbstract(event.target.value)}
-              className="border-2 text-black rounded-md p-4 text-center drop-shadow-xl w-full h-38 md:h-60"
+              className="border-2 text-black rounded-md p-4 text-center drop-shadow-xl w-full h-60 md:h-60"
               placeholder="Paste your abstract here"
             ></textarea>
             <div className="mt-1 p-1 rounded-md items-center" style={{  color: "black",fontWeight: "bold" }}>
+            <br></br>
             <h2 className='m-1 p-1 font-bold' style={{  color: "black", textAlign: "center" }}>Select an option to generate</h2>
               <label htmlFor="dropdown" items-center ></label>
               
               <select
                 id="dropdown"
-                className="border rounded-md p-2 w-full" style={{ textAlign: "center",fontWeight: "bold" }}
+                className="border rounded-md p-2 w-full" style={{ textAlign: "center",fontWeight: "bold", backgroundColor: "rgb(23, 255, 11)" }}
                 onChange={(event) => generateContent(event.target.value)}
               >
                 <option value="Introduction">Introduction</option>
@@ -94,13 +95,7 @@ export default function Home() {
               </select>
             </div>
             <div className="mt-3">
-              <button
-                type="submit"
-                className="btn rounded-md bg-green-600 text-white p-3 w-full"
-                disabled={isLoading}
-              >
-                {isLoading ? 'Generating...' : 'Generate'}
-              </button>
+
             </div>
           </div>
           <div className="flex-1">
