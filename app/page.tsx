@@ -26,15 +26,17 @@ export default function Home() {
         randomness: 0.4,
       };
 
-      const response = await fetch('https://api.worqhat.com/api/ai/content/v2', {
+    const BEARER_TOKEN = `Bearer ${process.env.WORQHAT_API_KEY}`;
+
+    const response = await fetch('https://api.worqhat.com/api/ai/content/v2', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          'x-api-key': 'U2FsdGVkX187FPQxzgbmIVjXh3O1+xyor30KWVrIBMuFEqGv8NfzXPjE53e3Ju+T',
-          'x-org-key': 'U2FsdGVkX19lq3bhhF5TRouMiyL2HvEBD2V5j5nNl6dNL9JWPbsXW0rqlzssW8GieFki6oRVDKTb/z01Hc7m+Q==',
+            'Content-Type': 'application/json',
+            'Authorization': BEARER_TOKEN,
         },
         body: JSON.stringify(requestData),
-      });
+    });
+
 
       if (!response.ok) {
         throw new Error('Network response was not ok');
