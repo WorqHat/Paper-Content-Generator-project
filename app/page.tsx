@@ -57,63 +57,141 @@ export default function Home() {
   };
 
   return (
-    <main className="w-full flex justify-center items-center" style={{ backgroundColor: "#00071B" }}>
-    <div className='logo' style={{ position: 'absolute', top: '0', left: '0', margin: '1%', fontSize: 'medium' }}>
-      <Image src="/logo.png" alt="Logo" width={100} height={50} />
-    </div>
-    <div className='social-icons' style={{ position: 'absolute', top: '0', right: '0', margin: '10px', fontSize: 'medium', display: 'flex' }}>
-      {socialMediaLinks.map((link, index) => (
-        <a key={index} href={link.url} target="_blank" rel="noopener noreferrer" style={{ margin: '0 5px' }}>
-          <Image src={link.icon} alt={link.name} width={20} height={20} />
-        </a>
-      ))}
-    </div>
-    <div className="container rounded-lg text-white m-20 p-14 w-full" style={{ backgroundColor: "#ffffff" }}>
-        <h1 className="text-center text-4xl font-bold mb-6" style={{  color: "black" }}><strong>
-          Information Generator for Research Paper by WorqHat</strong>
+    <main
+      className="w-full flex justify-center items-center"
+      style={{ backgroundColor: "#00071B" }}
+    >
+      <div
+        className="logo"
+        style={{
+          position: "absolute",
+          top: "0",
+          left: "0",
+          margin: "1%",
+          fontSize: "medium",
+        }}
+      >
+        <Image src="/logo.png" alt="Logo" width={100} height={50} />
+      </div>
+      <div
+        className="social-icons"
+        style={{
+          position: "absolute",
+          top: "0",
+          right: "0",
+          margin: "10px",
+          fontSize: "medium",
+          display: "flex",
+        }}
+      >
+        {socialMediaLinks.map((link, index) => (
+          <a
+            key={index}
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ margin: "0 5px" }}
+          >
+            <Image src={link.icon} alt={link.name} width={20} height={20} />
+          </a>
+        ))}
+      </div>
+      <div
+        className="container rounded-lg text-white m-20 p-14 w-full"
+        style={{ backgroundColor: "#ffffff" }}
+      >
+        <h1
+          className="text-center text-4xl font-bold mb-6"
+          style={{ color: "black" }}
+        >
+          <strong>Information Generator for Research Paper by WorqHat</strong>
         </h1>
         <div className="flex flex-col md:flex-row">
           <div className="flex-1 mb-4 md:mb-0 md:mr-4">
-            <h2 className='m-1 p-1 font-bold' style={{  color: "black", textAlign: "center" }}>Abstract</h2>
+            <h2
+              className="m-1 p-1 font-bold"
+              style={{ color: "black", textAlign: "center" }}
+            >
+              Abstract
+            </h2>
             <textarea
               value={abstract}
               onChange={(event) => setAbstract(event.target.value)}
-              className="border-2 text-black rounded-md p-4 text-center drop-shadow-xl w-full h-60 md:h-60"
+              className="border-2 text-black rounded-md p-4 text-center drop-shadow-xl w-full h-54 md:h-56"
               placeholder="Paste your abstract here"
             ></textarea>
-            <div className="mt-1 p-1 rounded-md items-center" style={{  color: "black",fontWeight: "bold" }}>
-            <br></br>
-            <h2 className='m-1 p-1 font-bold' style={{  color: "black", textAlign: "center" }}>Select an option to generate</h2>
-              <label htmlFor="dropdown" items-center ></label>
-              
+            <div
+              className="mt-1 p-1 rounded-md items-center"
+              style={{ color: "black", fontWeight: "bold" }}
+            >
+              <br></br>
+              <h2
+                className="m-1 p-1 font-bold"
+                style={{ color: "black", textAlign: "center" }}
+              >
+                Select an option to generate
+              </h2>
+              <label htmlFor="dropdown" items-center></label>
+
               <select
                 id="dropdown"
-                className="border rounded-md p-2 w-full" style={{ textAlign: "center",fontWeight: "bold", backgroundColor: "rgb(23, 255, 11)" }}
+                className="border rounded-md p-2 w-full"
+                style={{
+                  textAlign: "center",
+                  fontWeight: "bold",
+                  backgroundColor: "rgb(23, 255, 11)",
+                }}
                 onChange={(event) => generateContent(event.target.value)}
               >
+                <option value="Option">Option</option>
                 <option value="Introduction">Introduction</option>
                 <option value="Methodology">Methodology</option>
                 <option value="Objectives">Conclusion</option>
               </select>
             </div>
-            <div className="mt-3">
-
-            </div>
+            <div className="mt-3"></div>
           </div>
           <div className="flex-1">
-          <h2 className='m-1 p-1 font-bold' style={{  color: "black", textAlign: "center" }}>Generated Response</h2>
+            <h2
+              className="m-1 p-1 font-bold"
+              style={{ color: "black", textAlign: "center" }}
+            >
+              Generated Response
+            </h2>
             <textarea
-              className="border-2 text-black rounded-md p-4 text-center drop-shadow-xl w-full h-40 md:h-96"
+              className="border-2 text-black rounded-md p-4 text-center drop-shadow-xl w-full h-40 md:h-80"
               id=""
               cols={40}
               rows={8}
               placeholder="Here you will get the generated response from Worqhat"
-              value={isLoading ? 'Generating content...' : generatedContent}
+              value={isLoading ? "Generating content..." : generatedContent}
               readOnly
             ></textarea>
           </div>
         </div>
       </div>
+      <footer
+        className="text-center text-white mt-8 p-4"
+        style={{
+          backgroundColor: "#00071B",
+          position: "absolute",
+          bottom: 0,
+          width: "100%",
+        }}
+      >
+        <p>
+          <span>&copy; 2023 </span>
+          <a
+            href="https://www.worqhat.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "#87CEFA" }}
+          >
+            Worqhat
+          </a>
+          . All rights reserved.
+        </p>
+      </footer>
     </main>
   );
 }
